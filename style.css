@@ -1,0 +1,193 @@
+:root {
+  --bg: #0c0d10;
+  --bg-panel: #15171c;
+  --border: #262932;
+  --text: #e7e7ea;
+  --text-secondary: #9a9ca3;
+  --text-tertiary: #6b6d75;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --bjj: #c2491f;
+  --financeiro: #2774c4;
+  --negocio: #b3791a;
+  --organizacao: #16906f;
+  --ferramenta: #6f63d1;
+  --status-done: #2bb673;
+  --status-progress: #2f8fe0;
+  --status-pending: #d0a233;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.app-header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  margin-right: auto;
+}
+
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; }
+
+button {
+  background: var(--bg-panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 7px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+button:hover { background: #1c1f26; }
+button:active { transform: translateY(1px); }
+
+.mobile-only { display: none; }
+
+.app-body {
+  display: flex;
+  height: calc(100vh - 96px);
+}
+
+.side-panel {
+  width: 220px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  padding: 14px;
+  overflow-y: auto;
+}
+
+.side-panel h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  margin: 18px 0 8px;
+}
+.side-panel h2:first-of-type { margin-top: 0; }
+
+.legend { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--text-secondary); }
+.legend-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+
+.tag-list { display: flex; flex-direction: column; gap: 4px; }
+.tag-chip {
+  font-size: 12px;
+  padding: 5px 9px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-align: left;
+}
+.tag-chip.active {
+  background: var(--ferramenta);
+  color: #fff;
+  border-color: var(--ferramenta);
+}
+
+.canvas-box {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.canvas-box canvas { touch-action: none; }
+
+.empty-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.footer-hint {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  text-align: center;
+  margin: 6px 0;
+}
+
+dialog {
+  background: var(--bg-panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  width: min(380px, 90vw);
+}
+dialog::backdrop { background: rgba(0,0,0,0.55); }
+dialog h2 { margin: 0 0 12px; font-size: 15px; }
+dialog p { font-size: 13px; color: var(--text-secondary); }
+dialog label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+dialog input, dialog select, dialog textarea {
+  width: 100%;
+  margin-top: 4px;
+  background: #0c0d10;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  padding: 7px 9px;
+  font-size: 13px;
+  font-family: inherit;
+}
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.graph-tooltip {
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 8px 11px !important;
+  font-size: 12px !important;
+  max-width: 230px;
+  color: var(--text) !important;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .side-panel {
+    position: fixed;
+    top: 96px;
+    bottom: 0;
+    left: 0;
+    width: 78vw;
+    max-width: 280px;
+    background: var(--bg-panel);
+    z-index: 20;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+  }
+  .side-panel.open { transform: translateX(0); }
+  .mobile-only { display: inline-block; }
+  .app-header h1 { font-size: 14px; }
+}

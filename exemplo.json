@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    { "id": "0", "label": "Skill decupagem", "text": "Criar skill que explica plano por plano de gravação", "category": "ferramenta", "status": "done", "tags": ["skill", "video"], "x": 3.1, "y": -2.4, "z": 1.2 },
+    { "id": "1", "label": "Bike elétrica BJJ", "text": "Comprar bike elétrica se contratação BJJ confirmar", "category": "bjj", "status": "pending", "tags": ["bjj", "compra"], "x": -4.2, "y": 1.8, "z": -2.0 },
+    { "id": "2", "label": "Infoproduto solo", "text": "Replicar fórmula ACS em canal próprio, sem depender de terceiros", "category": "negocio", "status": "pending", "tags": ["negocio", "acs"], "x": 5.0, "y": 3.2, "z": 0.4 },
+    { "id": "3", "label": "Notion + IA", "text": "Captura rápida no iPhone, puxada por Claude/GPT depois", "category": "organizacao", "status": "pending", "tags": ["captura", "ia"], "x": -2.1, "y": -3.5, "z": 2.8 },
+    { "id": "4", "label": "Metaprompt GPT", "text": "Extração de contexto denso do GPT, reutilizável", "category": "ferramenta", "status": "done", "tags": ["skill", "ia"], "x": 2.3, "y": -4.1, "z": -1.0 },
+    { "id": "5", "label": "Método BJJ LT", "text": "Reconstrução do sistema de ensino, perdido 3x antes", "category": "bjj", "status": "progress", "tags": ["bjj", "ensino"], "x": -3.4, "y": -1.0, "z": -3.2 },
+    { "id": "6", "label": "Voltar a dar aula", "text": "Turma própria hipótese, terça/quinta/sábado", "category": "bjj", "status": "pending", "tags": ["bjj", "ensino"], "x": -5.0, "y": 0.5, "z": 1.6 },
+    { "id": "7", "label": "Projeto financeiro", "text": "PERFIL_FINANCEIRO_BASE criado, achados de FGTS e academias", "category": "financeiro", "status": "progress", "tags": ["financeiro", "base"], "x": 0.8, "y": 4.5, "z": -2.4 },
+    { "id": "8", "label": "Nomes não identificados", "text": "Dayane, Jose Elves, Manoel Tenorio, CNPJ fornecedores", "category": "financeiro", "status": "pending", "tags": ["financeiro", "pendencia"], "x": 1.6, "y": 5.8, "z": -1.0 },
+    { "id": "9", "label": "Meta Ads gasto", "text": "Maior gasto controlável: R$580-730 em 3 meses", "category": "financeiro", "status": "progress", "tags": ["financeiro", "acs"], "x": 2.8, "y": 4.0, "z": 1.8 },
+    { "id": "10", "label": "Mapa knowledge", "text": "Este documento — captura solta + painel visual", "category": "organizacao", "status": "progress", "tags": ["captura", "base"], "x": -1.0, "y": -2.6, "z": 3.6 }
+  ],
+  "links": [
+    { "source": "1", "target": "6" },
+    { "source": "1", "target": "7" },
+    { "source": "6", "target": "5" },
+    { "source": "6", "target": "7" },
+    { "source": "7", "target": "8" },
+    { "source": "7", "target": "9" },
+    { "source": "9", "target": "2" },
+    { "source": "0", "target": "4" },
+    { "source": "3", "target": "10" },
+    { "source": "4", "target": "5" },
+    { "source": "10", "target": "7" }
+  ]
+}
